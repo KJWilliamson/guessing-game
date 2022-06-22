@@ -18,3 +18,5 @@ Stop the player from being able to enter more guesses (this would mess the game 
 12) Once the game restarts, make sure the game logic and UI are completely reset, then go back to step 1.
 
 
+
+![guessing](https://user-images.githubusercontent.com/24884380/175173510-eb179434-2ceb-4b12-8708-0d356a3b9370.jpg)
