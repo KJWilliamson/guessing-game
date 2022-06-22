@@ -41,19 +41,34 @@ function checkGuess() {
     if (guessCount === 1) {
         //If it is, we make the guesses paragraph's text content equal to Previous guesses. 
         //If not, we don't.
+        //appends the current userGuess value onto the end of the guesses paragraph, plus a blank 
+        //space so there will be a space between each guess shown.
         guesses.textContent = 'Previous guesses: ';
     }
     guesses.textContent += userGuess + ' ';
 
+    //The first if(){ } checks whether the user's guess is equal to the randomNumber set at the top of 
+    //our JavaScript. If it is, the player has guessed correctly and the game is won, so we show the
+    // player a congratulations message with a nice green color, clear the contents of the Low/High guess
+    // information box, and run a function called setGameOver()
     if (userGuess === ranNum) {
         lastResult.textContent = 'Congrats!! You got it right!';
         lastResult.style.backgroundColor = '#5bc3eb';
         lowOrHi.textContent = '';
         setGameOver();
+        //Now we've chained another test onto the end of the last one using an else if(){ } structure.
+        // This one checks whether this turn is the user's last turn. If it is, the program does the same
+        // thing as in the previous block, except with a game over message instead of a congratulations 
+        //message.
     } else if (guessCount === 10) {
         lastResult.textContent = 'GAME OVER!!!';
         lowOrHi.textContent = '';
         setGameOver();
+        //The final block chained onto the end of this code (the else { }) contains code that is only
+        // run if neither of the other two tests returns true (i.e. the player didn't guess right, but
+        // they have more guesses left). In this case we tell them they are wrong, then we perform 
+        //another conditional test to check whether the guess was higher or lower than the answer, 
+        //displaying a further message as appropriate to tell them higher or lower.
     } else {
         lastResult.textContent = 'Wrong!';
         lastResult.style.backgroundColor = '#dadad9';
@@ -62,11 +77,35 @@ function checkGuess() {
         }
     }
 
+    //The last three lines in the function get us ready for the next guess to be 
+    //submitted. We add 1 to the guessCount variable so the player uses up their turn 
+    //(++ is an incrementation operation — increment by 1), and empty the value out of the form text 
+    //field and focus it again, ready for the next guess to be entered.
     guessCount++;
     guessField.value = '';
     guessField.focus();
   }
-  //When we want to run the code, we type the name of the function followed by the parentheses.
-checkGuess();
+
+  //Here we are adding an event listener to the guessSubmit button. This is a method that takes two 
+  //input values (called arguments) — the type of event we are listening out for (in this case click) 
+  //as a string, and the code we want to run when the event occurs (in this case the checkGuess() 
+  //function). 
+  guessSubmit.addEventListener('click', checkGuess);
 
 
+  function setGameOver() {
+    guessField.disabled = true;
+    guessSubmit.disabled = true;
+    resetButton = document.createElement('button');
+    resetButton.textContent = 'Start new game';
+    document.body.append(resetButton);
+    resetButton.addEventListener('click', resetGame);
+  }
+
+
+  function resetGame() {
+
+  }
+
+
+  
