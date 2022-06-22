@@ -20,6 +20,7 @@ color: #538083;
 
 p {
 color: #f06449;
+font-size: 30px;
 }
 
 .guessField {
@@ -31,5 +32,9 @@ background: #f06449;
 color: white;
 padding: 5px 10px;
 border: 1px solid #f06449;
+}
+
+input[type=text]:focus {
+  outline: 1px solid #538083;
 }
 
