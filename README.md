@@ -19,4 +19,5 @@ Stop the player from being able to enter more guesses (this would mess the game 
 
 
 
-![guessing](https://user-images.githubusercontent.com/24884380/175173510-eb179434-2ceb-4b12-8708-0d356a3b9370.jpg)
+![guessing](https://user-images.githubusercontent.com/24884380/175181208-84d6877b-7d0b-41e1-bf44-3a8bec21f691.jpg)
+
