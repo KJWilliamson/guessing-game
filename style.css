@@ -23,7 +23,7 @@ color: #f06449;
 font-size: 30px;
 }
 
-.guessField {
+label, input {
 color: #538083;
 }
 

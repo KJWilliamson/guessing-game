@@ -123,6 +123,11 @@ function checkGuess() {
     guessSubmit.disabled = true;
     resetButton = document.createElement('button');
     resetButton.textContent = 'Start new game';
+
+    resetButton.style.border = '#f06449';
+    resetButton.style.backgroundColor = '#f06449';
+    resetButton.style.color = 'white';  
+
     document.body.append(resetButton);
     resetButton.addEventListener('click', resetGame);
   }
