@@ -1,3 +1,5 @@
+## Javascript number guessing game
+
 1) Generate a random number between 1 and 100.
 2) Record the turn number the player is on. Start it on 1.
 3) Provide the player with a way to guess what the number is.
